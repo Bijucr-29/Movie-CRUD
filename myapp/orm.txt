@@ -1,0 +1,50 @@
+from 
+
+class Movie(models.Model):
+
+
+        title=models.CharField(max_length=200)
+
+        year=models.CharField(max_length=200)
+
+        runtime=models.PositiveIntegerField()
+
+        language=models.CharField(max_length=200)
+
+        genre=models.CharField(max_length=200)
+
+        director_name=models.CharField(max_length=200)
+
+
+orm query for creating a new Movie object
+
+>>Movie.objects.create(
+       "title"=manjummel boys,
+       "year"=2024,
+       "runtime"=120
+       "language"=malayalam
+       "genre"=survival thriller
+       "director"=chidambaram
+
+)
+
+1.  orm query for fetching all queries
+
+>>qs=Movie.objects.all()
+
+2.  display one 
+>>qs=Movie.objects.get(id=3)
+
+3.  condition based
+>>qs=Movie.objects.filter()
+
+4.  greater than ,less than,greater than equal to,less than equal to(lt,gt,gte,lte,__iexact,__icontains,__in=[],filter(id=1).update(),filter(id=6).delete)
+field lookups
+>>qs=Movie.objects.filter(year__gt=2023)
+>>qs=Movie.objects.filter(year__lt=2021)
+>>qs=Movie.objects.filter(title__iexact="kgf")=> dosen't consider upper&lower cases
+
+annotate
+import Count
+qs=Movie.objects.values("genre").annotate(varialblename=Count("genre"))  => two get two values= one corresponding value
+

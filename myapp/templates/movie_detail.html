@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{%block main_block%}
+<div class="cotainer mt-5 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Title:{{data.title}}</li>
+                        <li class="list-group-item">Genre:{{data.genre}}</li>
+                        <li class="list-group-item">Year:{{data.year}}</li>
+                        <li class="list-group-item">Runtime:{{data.runtime}}</li>
+                        <li class="list-group-item">Language:{{data.language}}</li>
+                        <li class="list-group-item">Director:{{data.director_name}}</li>
+                </ul>
+        </div>
+
+</div>
+{%endblock%}
+
+
+
+        
